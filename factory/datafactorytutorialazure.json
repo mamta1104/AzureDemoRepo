@@ -1,0 +1,9 @@
+{
+	"name": "datafactorytutorialazure",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a4870d1e-e6d3-41ac-a193-6d1e0cfd2249",
+		"tenantId": "0efe8563-40b6-4589-b116-c0d19802a808"
+	}
+}

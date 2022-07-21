@@ -1,0 +1,19 @@
+{
+	"name": "Json1_Dest",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ln_blobsource",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "jsonoutputfolder"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

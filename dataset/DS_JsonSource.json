@@ -1,0 +1,47 @@
+{
+	"name": "DS_JsonSource",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ln_blobsource",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "sample4.json",
+				"container": "jsoninputfolder"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"people": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"firstName": {
+								"type": "string"
+							},
+							"lastName": {
+								"type": "string"
+							},
+							"gender": {
+								"type": "string"
+							},
+							"age": {
+								"type": "integer"
+							},
+							"number": {
+								"type": "string"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
