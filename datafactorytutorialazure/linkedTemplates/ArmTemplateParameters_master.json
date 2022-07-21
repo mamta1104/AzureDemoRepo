@@ -5,13 +5,10 @@
 		"factoryName": {
 			"value": "datafactorytutorialazure"
 		},
-		"LN_BlobDynamic_connectionString": {
+		"ln_blobsource_connectionString": {
 			"value": ""
 		},
 		"LN_SQLDB_connectionString": {
-			"value": ""
-		},
-		"ln_blobsource_connectionString": {
 			"value": ""
 		},
 		"trig_storage_properties_typeProperties_scope": {

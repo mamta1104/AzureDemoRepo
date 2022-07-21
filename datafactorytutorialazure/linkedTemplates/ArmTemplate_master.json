@@ -7,17 +7,13 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "datafactorytutorialazure"
 		},
-		"LN_BlobDynamic_connectionString": {
+		"ln_blobsource_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'LN_BlobDynamic'"
+			"metadata": "Secure string for 'connectionString' of 'ln_blobsource'"
 		},
 		"LN_SQLDB_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LN_SQLDB'"
-		},
-		"ln_blobsource_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'ln_blobsource'"
 		},
 		"trig_storage_properties_typeProperties_scope": {
 			"type": "string",
@@ -50,14 +46,11 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"LN_BlobDynamic_connectionString": {
-						"value": "[parameters('LN_BlobDynamic_connectionString')]"
+					"ln_blobsource_connectionString": {
+						"value": "[parameters('ln_blobsource_connectionString')]"
 					},
 					"LN_SQLDB_connectionString": {
 						"value": "[parameters('LN_SQLDB_connectionString')]"
-					},
-					"ln_blobsource_connectionString": {
-						"value": "[parameters('ln_blobsource_connectionString')]"
 					},
 					"trig_storage_properties_typeProperties_scope": {
 						"value": "[parameters('trig_storage_properties_typeProperties_scope')]"
