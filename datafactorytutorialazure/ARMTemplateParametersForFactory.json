@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "datafactorytutorialazure"
+		},
+		"LN_BlobDynamic_connectionString": {
+			"value": ""
+		},
+		"LN_SQLDB_connectionString": {
+			"value": ""
+		},
+		"ln_blobsource_connectionString": {
+			"value": ""
+		},
+		"trig_storage_properties_typeProperties_scope": {
+			"value": "/subscriptions/fe5f5557-5ebc-46ca-8130-a760fdaf3b5e/resourceGroups/resourcegp/providers/Microsoft.Storage/storageAccounts/blobstoragetutorials"
+		}
+	}
+}
