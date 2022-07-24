@@ -31,7 +31,17 @@
 				"inputs": [
 					{
 						"referenceName": "DS_BlobStorage",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"dataset_FilePath": {
+								"value": "@pipeline().parameters.Source_FilePath",
+								"type": "Expression"
+							},
+							"dataset_FileName": {
+								"value": "@pipeline().parameters.Source_FileName",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
