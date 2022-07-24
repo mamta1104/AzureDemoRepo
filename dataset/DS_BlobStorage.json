@@ -1,0 +1,38 @@
+{
+	"name": "DS_BlobStorage",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LN_blobStoarge",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"dataset_FilePath": {
+				"type": "string"
+			},
+			"dataset_FileName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
+	}
+}
