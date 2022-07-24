@@ -26,7 +26,20 @@
 							"type": "DelimitedTextReadSettings"
 						}
 					},
-					"enableStaging": false
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
 				},
 				"inputs": [
 					{
@@ -39,6 +52,22 @@
 							},
 							"dataset_FileName": {
 								"value": "@pipeline().parameters.Source_FileName",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_AzureSQLDB",
+						"type": "DatasetReference",
+						"parameters": {
+							"dataset_TableName": {
+								"value": "@pipeline().parameters.Dest_TableName",
+								"type": "Expression"
+							},
+							"dataset_DBName": {
+								"value": "@pipeline().parameters.Dest_DBName",
 								"type": "Expression"
 							}
 						}
