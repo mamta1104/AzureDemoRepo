@@ -5,16 +5,13 @@
 		"parameters": {
 			"DatabaseName": {
 				"type": "string"
-			},
-			"ServerName": {
-				"type": "string"
 			}
 		},
 		"annotations": [],
 		"type": "SqlServer",
 		"typeProperties": {
-			"connectionString": "integrated security=False;data source=@{linkedService().ServerName};initial catalog=@{linkedService().DatabaseName};user id=mamta1104",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDI3NjRBMjI4LUQ1MUYtNDZCQi1BRkUxLUM4Q0Y0QTAyOTNGRl9lYWQ0ZTM1My0yNjZkLTQ2ZjMtYjJiNS1mYzljNjVmNDQwMjIiDQp9"
+			"connectionString": "integrated security=False;data source=azuresqlserverdemo03.database.windows.net;initial catalog=@{linkedService().DatabaseName};user id=mamta1104",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDI3NjRBMjI4LUQ1MUYtNDZCQi1BRkUxLUM4Q0Y0QTAyOTNGRl85NTA0NTEwMy1kMDRhLTQzNTQtOGZiNy05NDJlZDEwZWVhZjAiDQp9"
 		}
 	}
 }
