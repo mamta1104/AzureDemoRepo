@@ -2,20 +2,14 @@
 	"name": "DS_AzureSQLDB",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "LN_AzureSQLDB",
-			"type": "LinkedServiceReference",
-			"parameters": {
-				"DBName": {
-					"value": "@dataset().dataset_DBName",
-					"type": "Expression"
-				}
-			}
+			"referenceName": "LN_SQLDB",
+			"type": "LinkedServiceReference"
 		},
 		"parameters": {
 			"dataset_TableName": {
 				"type": "string"
 			},
-			"dataset_DBName": {
+			"dataset_tableschema": {
 				"type": "string"
 			}
 		},
@@ -23,7 +17,10 @@
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "dbo",
+			"schema": {
+				"value": "@dataset().dataset_tableschema",
+				"type": "Expression"
+			},
 			"table": {
 				"value": "@dataset().dataset_TableName",
 				"type": "Expression"
