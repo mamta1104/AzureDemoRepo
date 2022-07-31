@@ -34,6 +34,44 @@
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ID",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": " CustName",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CustName",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": " Location",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Location",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							}
+						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
@@ -66,8 +104,8 @@
 								"value": "@pipeline().parameters.Dest_TableName",
 								"type": "Expression"
 							},
-							"dataset_DBName": {
-								"value": "@pipeline().parameters.Dest_DBName",
+							"dataset_tableschema": {
+								"value": "@pipeline().parameters.Dest_TableSchema",
 								"type": "Expression"
 							}
 						}
@@ -86,6 +124,9 @@
 				"type": "string"
 			},
 			"Source_FilePath": {
+				"type": "string"
+			},
+			"Dest_TableSchema": {
 				"type": "string"
 			}
 		},
