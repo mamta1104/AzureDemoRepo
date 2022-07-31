@@ -11,6 +11,9 @@
 			},
 			"dataset_FileName": {
 				"type": "string"
+			},
+			"dataset_Directory": {
+				"type": "string"
 			}
 		},
 		"annotations": [],

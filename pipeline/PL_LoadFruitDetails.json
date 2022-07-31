@@ -1,0 +1,101 @@
+{
+	"name": "PL_LoadFruitDetails",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_BlobStorage",
+						"type": "DatasetReference",
+						"parameters": {
+							"dataset_FilePath": {
+								"value": "@pipeline().parameters.src_FilePath",
+								"type": "Expression"
+							},
+							"dataset_FileName": {
+								"value": "@pipeline().parameters.src_FileName",
+								"type": "Expression"
+							},
+							"dataset_Directory": {
+								"value": "@pipeline().parameters.src_Directory",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_AzureSQLDB",
+						"type": "DatasetReference",
+						"parameters": {
+							"dataset_TableName": {
+								"value": "@pipeline().parameters.dest_TableName",
+								"type": "Expression"
+							},
+							"dataset_tableschema": {
+								"value": "@pipeline().parameters.dest_TableSchema",
+								"type": "Expression"
+							}
+						}
+					}
+				]
+			}
+		],
+		"parameters": {
+			"dest_TableSchema": {
+				"type": "string"
+			},
+			"dest_TableName": {
+				"type": "string"
+			},
+			"src_FileName": {
+				"type": "string"
+			},
+			"src_FilePath": {
+				"type": "string"
+			},
+			"src_Directory": {
+				"type": "string"
+			}
+		},
+		"annotations": []
+	}
+}
