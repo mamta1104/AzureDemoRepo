@@ -114,9 +114,6 @@
 			}
 		],
 		"parameters": {
-			"Dest_DBName": {
-				"type": "string"
-			},
 			"Dest_TableName": {
 				"type": "string"
 			},
