@@ -1,0 +1,7 @@
+{
+	"name": "OnPremisesIntegrationRuntime",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "IR created to copy the data from onpremises to azure sql database in cloud environment"
+	}
+}
